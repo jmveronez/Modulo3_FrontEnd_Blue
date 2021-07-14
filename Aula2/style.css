@@ -1,0 +1,101 @@
+@import url('https://fonts.googleapis.com/css2?family=Zen+Loop&display=swap');
+
+*{
+    margin: 0;
+    padding: 0;
+    font-family: 'Zen Loop', 'Segoe UI', Tahoma, sans-serif;
+    box-sizing: border-box;
+}
+
+body{
+    background-color: #BBACC1;
+}
+
+main{
+    display: flex;
+    min-height: 100vh;
+    justify-content: center;
+    align-items: center;
+}
+
+.visor{
+    background-color: rgba(234, 224, 213, 0.5);
+    margin: 15px;
+    width: 90%;
+    height: 75px;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    align-items: flex-end;
+    justify-content: flex-end;
+    padding-right: 10px;
+    font-size: 40px;
+    font-weight: bold;
+    border-radius: 10px;
+    border: 0.5px solid black;
+}
+
+.calculadora{
+    background-color: #AC8887;
+    height: 575px;
+    width: 400px;
+    border-radius: 15px;
+    border: 1px solid rgb(63, 63, 63);
+    box-shadow: rgba(0, 0, 0, 0.39) 10px 10px;
+}
+
+.botoes{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    flex-grow: 1;
+    justify-content: space-evenly;
+    margin: 5px 15px;
+}
+
+.botao{
+    margin: 5px;
+    height: 80px;
+    width: 80px;
+    border-radius: 50px;
+    border: none;
+    cursor: pointer;
+    font-size: 24px;
+    font-weight: bold;
+    background-color: #f8d5b0;
+    box-shadow: rgba(0, 0, 0, 0.555) 2px 2px;
+    border: 0.5px solid black;
+    transition-duration: 0.2s;
+}
+
+#divisao,#soma,#subtracao,#mult{
+    background-color: #ffac53;
+}
+
+.botao:hover{
+    transform: scale(1.05);
+}
+
+.botao:active{
+    background-color:  #fac48b;
+    transform: scale(0.95);
+}
+
+.botao#apagar_all:active,.botao#apagar_um:active{
+    background-color: rgb(247, 120, 120);
+    transform: scale(0.95);
+}
+
+.botao#igual:active{
+    background-color:  rgb(124, 245, 124);
+    transform: scale(0.95);
+}
+
+.botao#igual{
+    height: 80px;
+    width: 175px;
+}
+
+#divisao:active,#soma:active,#subtracao:active,#mult:active{
+    background-color:  #ff9b31;
+}
