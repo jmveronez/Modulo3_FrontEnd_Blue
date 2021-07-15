@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Pesquisa sobre animes</title>
+</head>
+<body>
+    <div class="container">
+        <h1 id="title">Pesquisa sobre animes</h1>
+
+        <p id="description">Essa é uma pesquisa para saber quais foram os animes mais assistidos durante a quarentena.</p>
+    
+        <form id="survey">
+            <label for="name" id="name_label">Name:</label>
+            <input type="text" name="name" id="name" placeholder="Escreva seu nome..." required>
+
+            <label for="email" id="email_label">Email:</label>
+            <input type="email" name="email" id="email" placeholder="Escreva seu email..." required>
+
+            <label for="idade" id="idade_label">Idade:</label>
+            <input type="number" name="number" id="number" placeholder="Digite sua idade..." min="1" max="120">
+
+            <label for="dropdown" id="drop_label">Escolha seu genêro favorito</label>
+            <select name="genre" id="dropdown">
+                <option disabled selected value> </option>
+                <option value="Terror">Terror</option>
+                <option value="Shounen">Shounen</option>
+                <option value="Seinen">Seinen</option>
+                <option value="Drama">Drama</option>
+                <option value="Romance">Romance</option>
+                <option value="Slice of Life">Slice of Life</option>
+                <option value="Isekai">Isekai</option>
+            </select>
+
+            <div class="radio_buttons">
+                <p>Qual é a melhor hora de assistir um animezin?</p>
+                <input type="radio" name="time" value="manha">
+                <label for="manha">Manhã</label>
+                <input type="radio" name="time" value="tarde">
+                <label for="tarde">Tarde</label>
+                <input type="radio" name="time" value="noite">
+                <label for="noite">Noite</label>
+                <input type="radio" name="time" value="madrugada">
+                <label for="madrugada">Madruga</label>
+            </div>
+
+            <div class="check_buttons">
+                <p>Animes Assistidas:</p>
+                <label>
+                    <input type="checkbox" name="favorito" value="OnePiece" />One Piece
+                </label>
+                <label>
+                    <input type="checkbox" name="favorito" value="Haikyuu" />Haikyuu
+                </label>
+                <label>
+                    <input type="checkbox" name="favorito" value="DrStone" />Dr Stone
+                </label>
+                <label>
+                    <input type="checkbox" name="favorito" value="Black Clover" />Black Clover
+                </label>
+                <label>
+                    <input type="checkbox" name="favorito" value="Anohana" />Anohana
+                </label>
+                <label>
+                    <input type="checkbox" name="favorito" value="Nagatoro" />Nagatoro
+                </label>
+                <label>
+                    <input type="checkbox" name="favorito" value="ToYourEternity" />To Your Eternity
+                </label>
+                <label>
+                    <input type="checkbox" name="favorito" value="TokyoRevengers" />Tokyo Revengers
+                </label>
+                <label>
+                    <input type="checkbox" name="favorito" value="VinlandSaga" />Vinland Saga
+                </label>
+                <label>
+                    <input type="checkbox" name="favorito" value="OddTaxi">Odd Taxi
+                </label>
+                <label>
+                    <input type="checkbox" name="favorito" value="HunterHunter">Hunter x Hunter
+                </label>
+
+            </div>
+            <div class="textArea">
+                <p>Outros Animes:</p>
+                <textarea name="outras_series" id="outras_series" cols="30" rows="10" placeholder="Digite outros animes que você assistiu..."></textarea>
+            </div>
+            <button type="submit" id="submit">Enviar</button>
+        </form>
+    </div>
+</body>
+</html>
