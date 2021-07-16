@@ -61,6 +61,7 @@ main{
     padding-left: 0.5rem;
     background-color: rgba(252, 214, 249, 0.623);
     transition-duration: 0.25s;
+    box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
 }
 
 input:focus{
