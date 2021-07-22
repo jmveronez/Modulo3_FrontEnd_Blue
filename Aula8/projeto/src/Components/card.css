@@ -1,0 +1,9 @@
+.card{ 
+    background-color: rgb(104,106,240);
+    flex-direction: column;
+    color: azure;
+    display: flex;
+    padding: 1rem;
+    border-radius: 1rem;
+    margin: 1rem 1rem;
+}
