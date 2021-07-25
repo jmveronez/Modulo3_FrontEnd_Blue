@@ -1,0 +1,25 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.bloco{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin: 50px;
+}
+
+.bloco input{
+    text-align: center;
+    width: 250px;
+    height: 30px;
+}
+
+.bloco button{
+    margin: 10px;
+    height: 30px;
+    width: 100px;
+}
