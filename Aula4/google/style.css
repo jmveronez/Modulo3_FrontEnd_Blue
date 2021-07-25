@@ -21,7 +21,7 @@ header{
 }
 
 .link_header{
-    margin: 1rem 0.5em;
+    margin: 1.5rem 0.5em;
     font-size: 14px
 }
 
@@ -34,31 +34,112 @@ main{
     display: flex;
     flex-direction: column;
     justify-content: center;
+    align-items: center;
     text-align: center;
     height: 50%;
     padding: 1rem 10rem;
 }
 
-main input{
-    height: 40px;
-    width: 550px;
+.pesquisa{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+    width: 50%;
+    margin: 10px;
+    border-radius: 20px;
+    border: 1px solid rgb(180, 180, 180);
+}
+
+.pesquisa input{
+    height: 30px;
+    width: 90%;
+    transition-duration: 0.2s;
+    padding: 20px 10px;
+    border: none;
+}
+
+.pesquisa .icon{
+    margin: 4px;
+    padding: 5px;
+}
+
+.pesquisa:hover{
+    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+}
+
+.pesquisa input:focus{
+    outline: none;
+}
+
+.botoes{ 
+    margin: 20px;
+    height: 50px;
+}
+
+.botoes button{
+    height: 3em;
+    width: 12em;
+    transition-duration: 0.1s;
+    background-color: #f7f5f5;  
+    border: none;
+    cursor: pointer;
+}
+
+.botoes button:hover{
+    box-shadow: rgba(0, 0, 0, 0.02) 0px 1px 3px 0px, rgba(27, 31, 35, 0.15) 0px 0px 0px 1px;
+    transform: scale(1.02);
+}
+
+.botoes button:focus {
+    outline: none;
+    transform: scale(1.05);
+}
+
+.botoes button:active {
+    transform: scale(0.98);
+}
+
+.info{ 
+    font-size: 13px;
+}
+
+.info a{
+    color: blue;
+    font-size: 14px;
 }
 
 footer{
     display: flex;
     flex-direction: column;
-    position: relative;
-    top: 17rem;
+    position: absolute;
+    top: 38.5vw;
     background-color: #f2f2f2;
+    width: 100%;
 }
 
 footer .top{
     display: flex;
     border-bottom: 1px solid #bdbbbb;
     height: 3rem;
-    padding: 2rem;
+    padding: 5px;
+    font-size: 15px;
+    color: gray;
+    justify-content: baseline;
+    align-items: center;
 }
 
 footer .bottom{
+    display: flex;
     height: 3rem;
+    justify-content: baseline;
+    align-items: center;
+}
+
+footer .guia{
+    margin: 5px;
+    padding: 2px;
+    font-size: 15px;
+    color: gray;
 }
