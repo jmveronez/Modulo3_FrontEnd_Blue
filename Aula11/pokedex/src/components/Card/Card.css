@@ -1,0 +1,54 @@
+.card {
+    background-color: #e7e7e7;
+    width: 13rem;
+    color: #000000;
+    font-size: 1.2em;
+    padding: 0.5rem;
+    margin: 0.5rem;
+    border-radius: 0.3rem;
+    transition: 0.3s;
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+}
+
+.link{
+    text-decoration: none;
+}
+
+.card img{
+    width: 100%;
+}
+
+.card:hover {
+    opacity: 0.9;
+    cursor: pointer;
+    margin-top: -0.2rem;
+}
+
+.card-info{
+    background-color: #ffffff;
+    margin: -0.5rem;
+    border-bottom-left-radius: 0.4rem;
+    border-bottom-right-radius: 0.4rem;
+    padding: 0.4rem;
+}
+
+.card-id{
+    letter-spacing: 0.1em;
+    font-size: 0.8em;
+    color: #838080;
+}
+
+.grass{
+    background-color: #1ccc05;
+    color: #ffffff;
+    border-radius: 0.4rem;
+    padding: 0.1rem 0.4rem;
+    margin: 0 0.2rem 0 0;
+}
+
+.poison{
+    background-color: #7a16bd;
+    color: #ffffff;
+    border-radius: 0.4rem;
+    padding: 0.1rem 0.4rem;
+}
