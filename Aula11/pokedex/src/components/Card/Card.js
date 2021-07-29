@@ -1,19 +1,30 @@
 import { Link } from 'react-router-dom'
+import { useEffect, useState } from 'react'
 import "./Card.css"
 
-export default function Card(){
+export default function Card(info){
+
+    const [pokemon, setPokemon] = useState({})
+
+    useEffect( () => {
+        setPokemon(info.info)
+    }, [info.info]);
+
+    console.log(info.info)
+
     return(
-        <Link to="/sobre/001" className="link">
+        <Link className="link" to={{
+            pathname: "/sobre/" + pokemon.id,
+            state: pokemon
+        }}>
         <div className="card">
-        <img src="https://assets.pokemon.com/assets/cms2/img/pokedex/detail/001.png" alt="Bulbasauro"></img>
+        <img src={pokemon.img} alt={pokemon.name}></img>
         <div className="card-info">
-            <p className="card-id">
-                #001
-            </p>
-            <h2 className="card-name">Bulbasauro</h2>
+            <p className="card-id">{pokemon.id}</p>
+            <h2 className="card-name">{pokemon.name}</h2>
             <div className="card-category">
-                <span className="grass">Grass</span>
-                <span className="poison">Poison</span>
+                <span className={pokemon.tipo1}>{pokemon.tipo1}</span>
+                <span className={pokemon.tipo2}>{pokemon.tipo2}</span>
             </div>
         </div>
         </div>

@@ -47,6 +47,7 @@
     border-radius: 0.4rem;
     padding: 0.4rem;
     text-align: center;
+    font-size: 16px;
 }
 
 .grass{
@@ -62,4 +63,49 @@
     color: #ffffff;
     border-radius: 0.4rem;
     padding: 0.1rem 0.4rem;
+    margin: 0 0.2rem 0 0;
+}
+
+.fire{
+    background-color: #ff9900;
+    color: #ffffff;
+    border-radius: 0.4rem;
+    padding: 0.1rem 0.4rem;
+    margin: 0 0.2rem 0 0;
+}
+
+.flying{
+    background-color: #d1d0cd;
+    color: #ffffff;
+    border-radius: 0.4rem;
+    padding: 0.1rem 0.4rem;
+    margin: 0 0.2rem 0 0;
+}
+
+.water{
+    background-color: #0084ff;
+    color: #ffffff;
+    border-radius: 0.4rem;
+    padding: 0.1rem 0.4rem;
+    margin: 0 0.2rem 0 0;
+}
+
+.bug{
+    background-color: #009714;
+    color: #ffffff;
+    border-radius: 0.4rem;
+    padding: 0.1rem 0.4rem;
+    margin: 0 0.2rem 0 0;
+}
+
+.normal{
+    background-color: #d8cf4e;
+    color: #ffffff;
+    border-radius: 0.4rem;
+    padding: 0.1rem 0.4rem;
+    margin: 0 0.2rem 0 0;
+}
+
+.none{
+    display: none;
 }
