@@ -1,21 +1,31 @@
+import { useEffect, useState } from "react"
 import "./Infos.css"
+import { Link } from "react-router-dom"
 
-export default function Infos(){
+export default function Infos(personagens){
+
+    const [personagem, setPersonagem] = useState({})
+
+    useEffect(() => {
+        setPersonagem(personagens.location.state)
+    }, [personagens.location.state])
+
     return(
         <div className="container">
         <div className="card-info">
         <div className="infos-imagem">
-            <img src="https://giffiles.alphacoders.com/118/118784.gif" alt="Rick"></img>
+            <img src={personagem.gif} alt={personagem.name}></img>
         </div>
         <div className="infos">
             <div className="infos-dados">
-                <p className="nome">Rick Sanchez</p>
-                <p className="status"><strong>Status: Vivo </strong></p>
-                <p className="especie"><strong>Espécie: Humano </strong></p>
+                <p className="nome">{personagem.nome}</p>
+                <p className="status"><strong>Status: {personagem.status} </strong></p>
+                <p className="especie"><strong>Espécie: {personagem.especie} </strong></p>
             </div>
             <div className="historia">
-                <p>Rick Sanchez é um cientista conhecido intergalacticamente por ser (segundo ele próprio), o maior gênio do Universo. Depois de vinte anos afastado da filha, Beth, ele passa a viver na garagem da casa da família Smith</p>
+                <p>{personagem.historia}</p>
             </div>
+        <Link className="voltar" to="/">Voltar</Link>
         </div>
         </div>
         </div>

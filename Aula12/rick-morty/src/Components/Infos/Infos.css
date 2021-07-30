@@ -41,6 +41,8 @@
 .infos{
     display: flex;
     flex-direction: column;
+    justify-content: center;
+    align-items: center;
     width: 50%;
 }
 
@@ -75,4 +77,13 @@
 
 .link{
     text-decoration: none;
+}
+
+.voltar{
+    text-decoration: none;
+    text-align: center;
+    color: black;
+    background-color: rgba(128, 128, 128, 0.712);
+    width: 150px;
+    border-radius: 5px;
 }

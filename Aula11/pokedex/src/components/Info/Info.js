@@ -19,7 +19,9 @@ export default function Info(pokemon) {
             <div className="info-block">
                 <p><strong>Altura:</strong>{pokemons.altura}</p>
                 <p><strong>Peso:</strong>{pokemons.peso}</p>
-                <p><strong>Habilidades:</strong>{pokemons.habilidade}</p>
+                <p><strong>Habilidades:</strong>{pokemons.habilidade.map((habilidade) => {
+                    return habilidade
+                })}</p>
             </div>
             <div className="type">
                 <p><strong>Tipo</strong></p>

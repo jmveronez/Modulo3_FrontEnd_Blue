@@ -3,3 +3,26 @@
     flex-wrap: wrap;
     flex-direction: row;
 }
+
+button{
+    width: 20em;
+    height: 7em;
+    border-radius: 15px;
+    border: none;
+    background-color: rgb(69, 209, 252);
+    cursor: pointer;
+    font-weight: bolder;
+    margin-top: 16rem;
+    transition-duration: 0.2s;
+}
+
+button:hover{
+    transform: scale(0.98);
+    background-color: rgb(137, 226, 253);
+}
+
+.botao{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}

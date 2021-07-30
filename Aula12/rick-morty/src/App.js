@@ -7,7 +7,7 @@ function App() {
     <BrowserRouter>
       <Switch>
         <Route path="/" exact={true} component={Cardlist} />
-        <Route path="/infos/001" exact={true} component={Infos} />
+        <Route path="/sobre/:id" exact={true} component={Infos} />
       </Switch>
     </BrowserRouter>
   );
