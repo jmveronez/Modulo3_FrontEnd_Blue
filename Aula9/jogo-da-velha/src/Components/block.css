@@ -1,21 +1,5 @@
-.block{
-    width: 30%;
-    height: 25%;
-    border: 1px solid black;
-    cursor: pointer;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    background-color: rgb(247, 216, 216);
-}
-
 body{
     background-color: rgba(252, 210, 210, 0.61);
-}
-
-.block p{
-    color: red;
-    font-size: 30px;
 }
 
 main{
@@ -25,19 +9,51 @@ main{
 }
 
 .joguin{
-    display: flex;
-    flex-direction: row;
+    margin-top: 1rem;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
     width: 400px;
     height: 500px;
-    justify-content: center;
-    align-items: center;
-    flex-wrap: wrap;
-    margin-top: 20px;
+}
+
+.joguin button{
+    border: 1px solid #ddd;
+    font-size: 4rem;
+    line-height: 0;
+    cursor: pointer;
+    transition-duration: 0.5s;
+}
+
+.joguin button:hover{
+    background-color: rgb(187, 187, 187);
 }
 
 header{
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        margin-top: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 10px;
+}
+
+.ganhador {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    margin-left: 10rem;
+}
+
+.ganhador button{
+    height: 25px;
+    width: 150px;
+    border: none;
+    border-radius: 15px;
+    background-color: aqua;
+    cursor: pointer;
+    margin-top: 10px;
+    transition-duration: 0.5s;
+}
+
+.ganhador button:hover{
+    background-color: aquamarine;
 }

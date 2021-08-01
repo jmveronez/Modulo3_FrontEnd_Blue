@@ -1,29 +1,89 @@
 import "./block.css"
 import { useState } from "react"
 
-export default function Bloco(){
-
-    const [escolha, SetEscolha] = useState({
-        "0": " ",
-        "1": " ",
-        "2": " ",
-        "3": " ",
-        "4": " ",
-        "5": " ",
-        "6": " ",
-        "7": " ",
-        "8": " "
-        });
-
-    function AlterarEscolha(escolha) {
-        if (escolha == " "){
-            SetEscolha[escolha]("X")
-        } else if (escolha === "X"){
-            SetEscolha[escolha]("O")
-        } else if (escolha === "O"){
-            SetEscolha[escolha](" ")
+function getInitialState(){
+    const state = {}
+    for (let r = 0; r < 3; r++){
+        for (let c = 0; c < 3; c++) {
+            state[`${r}-${c}`] = null
         }
     }
+
+    console.log(state)
+    return state;
+}
+
+const getLabel = (value) => {
+    if (!value) {
+        return null
+    } 
+    return value > 0 ? "O" : "X"
+}
+
+function getWinner(v){
+    for (let r = 0; r < 3; r++){
+        for (let c = 0; c < 3; c++) {
+            const sumRow = v[`${r}-${c}`] + v[`${r}-${c+1}`] + v[`${r}-${c+2}`]
+            if (sumRow === 3 || sumRow === -3) {
+                return sumRow
+            }
+            
+            const sumCol = v[`${r}-${c}`] + v[`${r + 1}-${c}`] + v[`${r + 2}-${c}`]
+            if (sumCol === 3 || sumCol === -3) {
+            return sumCol
+            }
+
+            const sumDiagonal = v[`${r}-${c}`] + v[`${r + 1}-${c + 1}`] + v[`${r + 2}-${c + 2}`]
+            if (sumDiagonal === 3 || sumDiagonal === -3) {
+            return sumDiagonal
+            }
+
+            const sumReverseDiagonal = v[`${r}-${c}`] + v[`${r + 1}-${c - 1}`] + v[`${r + 2}-${c - 2}`]
+            if (sumReverseDiagonal === 3 || sumReverseDiagonal === -3) {
+            return sumReverseDiagonal
+            }
+        }
+    }
+    return null
+}
+
+const getkeyFromIndex = (index) => {
+    const row = Math.floor(index / 3);
+    const col = index % 3
+    
+    return `${row}-${col}`
+}
+
+export default function Bloco(){
+
+    const [values, setValues] = useState(getInitialState)
+    const [player, setPlayer] = useState(1)
+    const [winner, setWinner] = useState(null)
+
+    function handleClick(key) {
+        if ( winner || values[key]) {
+            return;
+        }
+        const newValues = {
+            ...values,
+            [key]: player,
+        }
+        setValues(newValues);
+        setPlayer(player * -1)
+        const newWinner = getWinner(newValues)
+
+        if (newWinner) {
+            setWinner(newWinner > 0 ? 1: -1)
+        }
+    }
+
+    function reset() {
+        setWinner(null)
+        setValues(getInitialState)
+        setPlayer(1)
+    };
+
+    const itsATie = Object.values(values).filter(Boolean).length === 9 && !winner
 
     return (
         <>
@@ -32,25 +92,24 @@ export default function Bloco(){
         </header>
         <main>
             <div className="joguin">
-                <div className="block" onClick={ () => AlterarEscolha(escolha[0])}>{escolha[0]}</div>
-
-                <div className="block" onClick={ () => AlterarEscolha(escolha[1])}>{escolha[1]}</div>
-
-                <div className="block" onClick={ () => AlterarEscolha(escolha[2])}>{escolha[2]}</div>
-
-                <div className="block" onClick={ () => AlterarEscolha(escolha[3])}>{escolha[3]}</div>
-
-                <div className="block" onClick={ () => AlterarEscolha(escolha[4])}>{escolha[4]}</div>
-
-                <div className="block" onClick={ () => AlterarEscolha(escolha[5])}>{escolha[5]}</div>
-
-                <div className="block" onClick={ () => AlterarEscolha(escolha[6])}>{escolha[6]}</div>
-
-                <div className="block" onClick={ () => AlterarEscolha(escolha[7])}>{escolha[7]}</div>
-
-                <div className="block" onClick={ () => AlterarEscolha(escolha[8])}>{escolha[8]}</div>
-
+                {Array.from({ length: 9}).map((_, index) => {
+                    const key = getkeyFromIndex(index)
+                    return (
+                        <button key={index} type="button" onClick={() => handleClick(key)}>
+                        {getLabel(values[key])}
+                        </button>
+                    )
+                })}
             </div>
+            {(winner ||itsATie)&& (
+            <div className="ganhador">
+                {winner ? (
+                <p>O ganhador é: {winner > 0 ? "O" : "X"}</p>
+                ) : (
+                    <p>Houve um empate!</p>
+                )}
+                <button onClick={() => reset()}>Reiniciar</button>
+            </div>)}
         </main>
         </>
         )
